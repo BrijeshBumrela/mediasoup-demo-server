@@ -19,7 +19,9 @@ const io = new Server(server, {
 app.use(bodyParser.json());
 app.use(cors());
 
-server.listen(8000);
+app.get('/', (req, res) => res.send('welcome'))
+
+server.listen(443);
 
 
 // List of meetings that are currently going on
