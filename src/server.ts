@@ -21,7 +21,7 @@ app.use(cors());
 
 app.get('/', (req, res) => res.send('welcome'))
 
-server.listen(443);
+server.listen(8000);
 
 
 // List of meetings that are currently going on
