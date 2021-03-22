@@ -72,6 +72,9 @@ typings/
 .env
 .env.test
 
+.vercel
+build/
+
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 
@@ -102,3 +105,5 @@ dist
 
 # TernJS port file
 .tern-port
+
+.vercel
