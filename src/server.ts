@@ -7,17 +7,20 @@ import { types as msTypes } from "mediasoup";
 import socketService from "./services/socket";
 import Meet from "./models/Meet";
 import { createMsWorkers } from "./services/mediasoup";
+import fs from 'fs';
 
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
-    cors: {
-        origin: "*",
-    },
+	cors: {
+    origin: '*',
+  }
 });
 
 app.use(bodyParser.json());
 app.use(cors());
+
+app.get('/', (req, res) => res.send('welcome'))
 
 server.listen(8000);
 

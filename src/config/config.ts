@@ -50,7 +50,8 @@ const mediaCodecs: msTypes.RtpCodecCapability[] = [
 
 const listenIps: msTypes.TransportListenIp[] = [
     {
-        ip: "127.0.0.1",
+        ip: "172.31.6.60",
+	announcedIp: "13.233.100.69"
     },
 ];
 
