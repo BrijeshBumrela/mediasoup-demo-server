@@ -2,7 +2,6 @@ import express from "express";
 import http from "http";
 import { Server } from "socket.io";
 import cors from "cors";
-import bodyParser from "body-parser";
 import { types as msTypes } from "mediasoup";
 import socketService from "./services/socket";
 import Meet from "./models/Meet";
@@ -16,7 +15,7 @@ const io = new Server(server, {
     },
 });
 
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(cors());
 
 app.get('/', (req, res) => res.send('welcome'))

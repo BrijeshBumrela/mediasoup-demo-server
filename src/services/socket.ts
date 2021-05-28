@@ -114,7 +114,7 @@ export default async (
             kind,
             rtpParameters,
         }: {
-            kind: msTypes.MediaKind;
+            kind: msTypes.MediaKind | 'screen';
             rtpParameters: msTypes.RtpParameters;
         } = data;
         const [user, meeting] = findUserAndMeeting(socket.id);
@@ -130,7 +130,7 @@ export default async (
 
         try {
             const producer = await user.producerTransport.produce({
-                kind,
+                kind: kind !== 'screen' ? kind : 'video',
                 rtpParameters,
             });
 
@@ -138,6 +138,8 @@ export default async (
                 user.audioProducer = producer;
             } else if (kind === "video") {
                 user.videoProducer = producer;
+            } else if (kind === 'screen') {
+                user.screenShareProducer = producer;
             }
 
             callback({ id: producer.id });
@@ -159,7 +161,7 @@ export default async (
         }: {
             rtpCapabilities: msTypes.RtpCapabilities;
             userId: string;
-            kind: msTypes.MediaKind;
+            kind: msTypes.MediaKind | 'screen';
         } = data;
         const [user, meeting] = findUserAndMeeting(socket.id);
 
@@ -181,6 +183,8 @@ export default async (
             producer = producerUser.audioProducer;
         } else if (kind === "video") {
             producer = producerUser.videoProducer;
+        } else if (kind === 'screen') {
+            producer = producerUser.screenShareProducer;
         }
 
         const router = meeting.router;

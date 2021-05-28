@@ -5,6 +5,7 @@ export default class User {
     consumerTransport: types.Transport | null;
     videoProducer: types.Producer | null;
     audioProducer: types.Producer | null;
+    screenShareProducer: types.Producer | null;
     producing: boolean;
     consumers: types.Consumer[] = []
 
