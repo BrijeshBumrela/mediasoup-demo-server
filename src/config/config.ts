@@ -55,7 +55,7 @@ const listenIps: msTypes.TransportListenIp[] = [
 ];
 
 export default {
-    listenPort: 3000,
+    listenPort: 8000,
     mediasoup: {
         worker: {
             rtcMinPort: 10000,

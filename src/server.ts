@@ -6,6 +6,7 @@ import { types as msTypes } from "mediasoup";
 import socketService from "./services/socket";
 import Meet from "./models/Meet";
 import { createMsWorkers } from "./services/mediasoup";
+import config from "./config/config";
 
 const app = express();
 const server = http.createServer(app);
@@ -20,7 +21,7 @@ app.use(cors());
 
 app.get('/', (req, res) => res.send('welcome'))
 
-server.listen(8000);
+server.listen(config.listenPort);
 
 
 // List of meetings that are currently going on
