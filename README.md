@@ -4,7 +4,7 @@ Application to showcase the working of <a href="https://mediasoup.org" target="_
 a Selective Forwarding Unit based library to create scalable video conferencing apps.
 This is a backend part of the demo application. 
 Built using _node_, _TypeScript_ and [_mediasoup_](https://www.npmjs.com/package/mediasoup) package
-This project is to be run with [mediasoup-demo-ui](https://github.com/BrijeshBumrela/mediasoup-demo-ui) and follow it's instructions
+This project is to be run with [mediasoup-demo-ui](https://github.com/BrijeshBumrela/mediasoup-demo-ui)
 
 
 ## Installation
